@@ -1,0 +1,50 @@
+﻿@model QuizPortal.Models.Account
+@{
+    ViewData["Title"] = "AccountLogin";
+    Layout = "_LayoutPartial";
+}
+
+
+<div class="mt-5 pt-5 col-md-8 offset-2">
+    <div class="card">
+        <div class="card-body">
+            <div class="card-group"></div>
+            <img src="~/image/undraw_profile_pic_ic5t.png" height="150px;" width="150px;" class="offset-3" />
+
+            <form asp-action="Index" asp-controller="Account" method="post">
+                <div class="input-group col-lg-12">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-white px-4 border-md border-right-0">
+                            <i class="fa fa-user text-muted"></i>
+                        </span>
+                    </div>
+                    <input type="text" asp-for="studentName" placeholder="STUDENT NAME" autocomplete="off" autofocus required class="form-control bg-white border-left-0 border-md">
+                    @*<label class="form-label">Username</label>*@
+                </div>
+
+                <div class="input-group col-lg-12">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-white px-4 border-md border-right-0">
+                            <i class="fa fa-lock text-muted"></i>
+                        </span>
+                    </div>
+                    <input type="password" asp-for="section" placeholder="STUDENT SECTION" autocomplete="off" required class="form-control bg-white border-left-0 border-md">
+                    @*<label class="form-label">Password</label>*@
+                </div>
+                <div class="input-group col-lg-12">
+                    <a class="text-muted" href="">Register?</a>
+                </div>
+
+                <div class="input-group col-lg-12">
+                    <button type="submit" id="sekret" class="btn btn-success btn-block"><i class="fa fa-arrow-circle-right"></i>Submit</button>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+@*@section login{
+        <script src="~/js/login/loginform.js"></script>
+    }*@
