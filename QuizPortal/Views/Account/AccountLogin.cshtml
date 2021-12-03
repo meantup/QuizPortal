@@ -10,15 +10,16 @@
         <div class="card-body">
             <div class="card-group"></div>
             <img src="~/image/undraw_profile_pic_ic5t.png" height="150px;" width="150px;" class="offset-3" />
-            @using (Html.BeginForm("Account", "Index", FormMethod.Post, new { id = "formHandler", @class = "form-group" }))
-            {
+            @*@using (Html.BeginForm("Index", "Account", FormMethod.Post, new { id = "formHandler", @class = "form-group" }))
+            {*@
+            <form id="formHandler">
                 <div class="input-group col-lg-12">
                     <div class="input-group-prepend">
                         <span class="input-group-text bg-white px-4 border-md border-right-0">
                             <i class="fa fa-user text-muted"></i>
                         </span>
                     </div>
-                    <input type="text" asp-for="studentName" placeholder="STUDENT NAME" autocomplete="off" autofocus required class="form-control bg-white border-left-0 border-md">
+                    <input type="text" asp-for="email" placeholder="STUDENT EMAIL" autocomplete="off" autofocus required class="form-control bg-white border-left-0 border-md">
                     @*<label class="form-label">Username</label>*@
                 </div>
 
@@ -28,22 +29,24 @@
                             <i class="fa fa-lock text-muted"></i>
                         </span>
                     </div>
-                    <input type="password" asp-for="section" placeholder="STUDENT SECTION" autocomplete="off" required class="form-control bg-white border-left-0 border-md">
+                    <input type="password" asp-for="password" placeholder="STUDENT PASSWORD" autocomplete="off" required class="form-control bg-white border-left-0 border-md">
                     @*<label class="form-label">Password</label>*@
                 </div>
                 <div class="input-group col-lg-12">
-                    <a class="text-muted" href="" id="register">Register?</a>
+                    <a class="text-muted" asp-action="AccountRegistration" id="register">You don't have an account?</a>
                 </div>
 
                 <div class="input-group col-lg-12">
                     <button type="submit" id="sekret" class="btn btn-success btn-block"><i class="fa fa-arrow-circle-right"></i>Submit</button>
                 </div>
 
-            }
+            </form>
+               
+            @*}*@
         </div>
     </div>
 </div>
 
-@*@section login{
-        <script src="~/js/login/loginform.js"></script>
-    }*@
+@section login{
+   <script src="~/js/login/loginform.js"></script>
+}

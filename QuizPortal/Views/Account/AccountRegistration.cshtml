@@ -1,0 +1,85 @@
+﻿@model QuizPortal.Models.AccountRegistration
+@{
+    ViewData["Title"] = "AccountRegistration";
+    Layout = "_LayoutPartial";
+}
+
+
+<div class="mt-5 pt-5 col-md-8 offset-2">
+    <div class="card"><div class="alert-danger" id="errorMessage" style="display:block"></div>
+        <div class="card-body">
+            <div class="card-group"></div>
+            <img src="~/image/cropted.png" height="150px;" width="180px;" class="offset-2" />
+            @using (Html.BeginForm("Registration", "Account", FormMethod.Post, new { id = "formHandler", @class = "form-group" }))
+            {
+                <div class="input-group col-lg-12">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-white px-4 border-md border-right-0">
+                            <i class="fa fa-pen-alt text-muted"></i>
+                        </span>
+                    </div>
+                    <input type="text" asp-for="LastName" placeholder="STUDENT LASTNAME" autocomplete="off" autofocus required class="form-control bg-white border-left-0 border-md">
+
+                </div>
+
+                <div class="input-group col-lg-12">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-white px-4 border-md border-right-0">
+                            <i class="fa fa-pen-alt text-muted"></i>
+                        </span>
+                    </div>
+                    <input type="text" asp-for="FirstName" placeholder="STUDENT FIRSTNAME" autocomplete="off" autofocus required class="form-control bg-white border-left-0 border-md">
+                </div>
+                <div class="input-group col-lg-12">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-white px-4 border-md border-right-0">
+                            <i class="fa fa-pen-alt text-muted"></i>
+                        </span>
+                    </div>
+                    <input type="text" asp-for="MiddleName" placeholder="STUDENT MIDDLENAME" autocomplete="off" autofocus required class="form-control bg-white border-left-0 border-md">
+                </div>
+
+                <div class="input-group col-lg-12">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-white px-4 border-md border-right-0">
+                            <i class="fa fa-archive text-muted"></i>
+                        </span>
+                    </div>
+                    <input type="text" asp-for="section" placeholder="STUDENT SECTION" autocomplete="off" required class="form-control bg-white border-left-0 border-md">
+                </div>
+
+                <div class="input-group col-lg-12">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-white px-4 border-md border-right-0">
+                            <i class="fa fa-address-book text-muted"></i>
+                        </span>
+                    </div>
+                    <input type="text" asp-for="email" placeholder="STUDENT EMAIL" autocomplete="off" required class="form-control bg-white border-left-0 border-md">
+                </div>
+
+                <div class="input-group col-lg-12">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-white px-4 border-md border-right-0">
+                            <i class="fa fa-lock text-muted"></i>
+                        </span>
+                    </div>
+                    <input type="password" asp-for="password" placeholder="STUDENT PASSWORD" autocomplete="off" required class="form-control bg-white border-left-0 border-md">
+
+                </div>
+
+                <div class="input-group col-lg-12">
+                    <a class="text-muted" asp-action="AccountLogin" id="register">You have an account already?</a>
+                </div>
+
+                <div class="input-group col-lg-12">
+                    <button type="submit" id="sekret" class="btn btn-success btn-block"><i class="fa fa-arrow-circle-right"></i>Submit</button>
+                </div>
+
+            }
+        </div>
+    </div>
+</div>
+
+@*@section login{
+        <script src="~/js/login/loginform.js"></script>
+    }*@

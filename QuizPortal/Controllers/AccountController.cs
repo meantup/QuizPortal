@@ -13,7 +13,19 @@ namespace QuizPortal.Controllers
         {
             return View();
         }
+        [HttpPost]
+        [Route("Login")]
         public async Task<ActionResult> Index(Account account)
+        {
+            return View();
+        }
+        public IActionResult AccountRegistration()
+        {
+            return View();
+        }
+        [HttpPost]
+        [Route("Register")]
+        public async Task<ActionResult> Registration(AccountRegistration account)
         {
             return View();
         }
